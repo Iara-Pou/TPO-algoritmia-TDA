@@ -2,22 +2,20 @@ package main.java.org.uade.structure.implementation.dynamic;
 
 import main.java.org.uade.structure.definition.LinkedListADT;
 
-import java.util.Arrays;
-
 public class DynamicLinkedList implements LinkedListADT {
 
     private int[] linkedList;
 
-    public DynamicLinkedList(int value) {
-        linkedList = new int[]{value};
+    public DynamicLinkedList() {
+        linkedList = new int[0];
     }
 
     @Override
     public void add(int value) {
-        //cantidad de elementos en lista +1, por el valor nuevo
+        // cantidad de elementos en lista +1, por el valor nuevo
         int newSize = this.size() + 1;
 
-        //creo y relleno nueva lista
+        // creo y relleno nueva lista
         int[] newList = new int[newSize];
         for (int i = 0; i <= this.size(); i++) {
             if (i == this.size()) {
@@ -29,7 +27,7 @@ public class DynamicLinkedList implements LinkedListADT {
         // inserto el nuevo valor
         newList[this.size()] = value;
 
-        //retorno nueva lista
+        // retorno nueva lista
         linkedList = newList;
     }
 
@@ -43,7 +41,8 @@ public class DynamicLinkedList implements LinkedListADT {
             throw new IndexOutOfBoundsException("El índice excede la longitud de la lista");
         }
 
-        // Copiar elementos hasta índice, insertar valor en indice, copiar los que siguen
+        // Copiar elementos hasta índice, insertar valor en indice, copiar los que
+        // siguen
         for (int i = 0; i < index; i++) {
             newList[i] = this.get(i);
         }
@@ -95,10 +94,4 @@ public class DynamicLinkedList implements LinkedListADT {
         return this.size() == 0;
     }
 
-    @Override
-    public String toString() {
-        return "DynamicLinkedList{" +
-                "linkedList=" + Arrays.toString(linkedList) +
-                '}';
-    }
 }
