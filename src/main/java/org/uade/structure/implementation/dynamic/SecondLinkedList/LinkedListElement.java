@@ -1,4 +1,4 @@
-package org.uade.structure.implementation;
+package org.uade.structure.implementation.dynamic.SecondLinkedList;
 
 public class LinkedListElement {
 
