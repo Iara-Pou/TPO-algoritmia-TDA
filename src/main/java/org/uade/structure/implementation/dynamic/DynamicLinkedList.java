@@ -1,6 +1,7 @@
 package main.java.org.uade.structure.implementation.dynamic;
 
 import main.java.org.uade.structure.definition.LinkedListADT;
+import main.java.org.uade.structure.exception.OverflowADTException;
 
 public class DynamicLinkedList implements LinkedListADT {
 
@@ -38,7 +39,7 @@ public class DynamicLinkedList implements LinkedListADT {
         int[] newList = new int[newSize];
 
         if (index < 0 || index > previousSize) {
-            throw new IndexOutOfBoundsException("El índice excede la longitud de la lista");
+            throw new OverflowADTException("El índice excede la longitud de la lista");
         }
 
         // Copiar elementos hasta índice, insertar valor en indice, copiar los que
@@ -62,7 +63,7 @@ public class DynamicLinkedList implements LinkedListADT {
         int[] newList = new int[newSize];
 
         if (index < 0 || index > previousSize) {
-            throw new IndexOutOfBoundsException("El índice excede la longitud de la lista");
+            throw new OverflowADTException("El índice excede la longitud de la lista");
         }
 
         // Copiar elementos, sin índice a eliminar
@@ -79,7 +80,7 @@ public class DynamicLinkedList implements LinkedListADT {
     @Override
     public int get(int index) {
         if (index < 0 || index >= this.size()) {
-            throw new IndexOutOfBoundsException("Índice fuera de los límites");
+            throw new OverflowADTException("Índice fuera de los límites");
         }
         return linkedList[index];
     }

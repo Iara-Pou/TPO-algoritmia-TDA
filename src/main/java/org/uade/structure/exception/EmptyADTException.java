@@ -1,4 +1,4 @@
-package org.uade.structure.exception;
+package main.java.org.uade.structure.exception;
 
 public class EmptyADTException extends RuntimeException {
     public EmptyADTException(String message) {
